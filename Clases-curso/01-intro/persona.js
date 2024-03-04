@@ -18,12 +18,12 @@ class Persona {
 
     comer(cantidad) {
         this.vida < 150
-        ? (this.vida = this.vida + cantidad)
+        ? (this.vida = (this.vida + cantidad) > 150 ? 150 : (this.vida + cantidad))
         : (console.log("NO puede comer más"))
     }
 
     entrenar(cantidad) {
-        if (this.vida > 50) {
+        if (this.vida > 50 && cantidad < this.vida) {
             this.vida = this.vida - cantidad;
         } else {
             console.log(this.nombre, "NO puede entrenar más");
